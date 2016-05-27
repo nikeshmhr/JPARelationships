@@ -49,7 +49,6 @@ public class ManyToManyTest {
 //        service.addProject(p1);
 //        service.addProject(p2);
 //        service.addProject(p3);
-
         // selecting from database
         List<Project> listOfProjects = service.getAllProjects();
         System.out.println("Size of projects: " + listOfProjects.size());
