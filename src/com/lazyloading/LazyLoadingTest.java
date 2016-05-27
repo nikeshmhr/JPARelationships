@@ -15,14 +15,14 @@ public class LazyLoadingTest {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("LazyPersistenceUnit");
         EntityManager em = factory.createEntityManager();
         LazyLoadingService service = new LazyLoadingService(em);
-        //        ParkingSpace space = new ParkingSpace("D");
-        //        em.getTransaction().begin();
-        //        em.persist(space);
-        //        em.getTransaction().commit();
-        //        
-        //        Employee e = new Employee("Nikesh", space);
-        //        
-        //        service.insertEmployee(e);
+        ParkingSpace space = new ParkingSpace("D");
+        em.getTransaction().begin();
+        em.persist(space);
+        em.getTransaction().commit();
+
+        Employee e = new Employee("Nikesh", space);
+
+        service.insertEmployee(e);
 
         em.getTransaction().begin();
         List<Employee> employees = service.getEmployees();
