@@ -16,20 +16,19 @@ public class ManyToOneTest {
         EntityManager em = factory.createEntityManager();
 
         ManyToOneSingleValuePU service = new ManyToOneSingleValuePU(em);
-        //        Person person = new Person("Nikesh mhr");
-        //        service.addPerson(person);
+                Person person = new Person("Nikesh mhr");
+                service.addPerson(person);
 
-        //        Phone phone = new Phone("89813478414", person);
-        //        service.addPhone(phone);
-        //        Person pe = service.findPersonById(51);
-        //        service.addPhone(new Phone("11123213", pe));
-               
+                Phone phone = new Phone("89813478414", person);
+                service.addPhone(phone);
+                service.addPhone(new Phone("11123213", person));
+              
         // Display thingy
-        List<Person> persons = service.finddAllPerson();
-
-        List<Phone> phones = service.findAllPhones();
-
-        System.out.println("DEBUG POINT.");
+//        List<Person> persons = service.finddAllPerson();
+//
+//        List<Phone> phones = service.findAllPhones();
+//
+//        System.out.println("DEBUG POINT.");
     }
 
 }
